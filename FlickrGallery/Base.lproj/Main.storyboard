@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -38,7 +39,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Refresh"/>
                                 <connections>
-                                    <action selector="loadFlickrPhotos" destination="mal-rt-h1m" eventType="touchUpInside" id="2sz-Tk-MVV"/>
+                                    <action selector="refreshView" destination="mal-rt-h1m" eventType="touchUpInside" id="PTZ-fp-3fo"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Yq-Bd-Ih1">
@@ -59,9 +60,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Gallery" id="NH4-dC-nPV"/>
-                    <connections>
-                        <outlet property="refreshButton" destination="jW8-3z-lX1" id="hd0-X9-tc9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K40-MO-J3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,11 +131,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hoe-fP-ujm">
-                                            <rect key="frame" x="5" y="5" width="90" height="90"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hoe-fP-ujm">
+                                            <rect key="frame" x="8" y="8" width="84" height="84"/>
                                         </imageView>
                                         <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0X-Lb-ALe">
-                                            <rect key="frame" x="5" y="5" width="90" height="90"/>
+                                            <rect key="frame" x="8" y="8" width="84" height="84"/>
                                             <state key="normal">
                                                 <color key="titleColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
@@ -150,14 +148,18 @@
                                 </view>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="p0X-Lb-ALe" firstAttribute="top" secondItem="5RL-Z2-LzW" secondAttribute="top" constant="5" id="3Rb-e8-GJC"/>
-                                    <constraint firstItem="Hoe-fP-ujm" firstAttribute="top" secondItem="5RL-Z2-LzW" secondAttribute="top" constant="5" id="MRx-vm-ppo"/>
-                                    <constraint firstItem="Hoe-fP-ujm" firstAttribute="leading" secondItem="5RL-Z2-LzW" secondAttribute="leading" constant="5" id="NeN-2F-JZb"/>
-                                    <constraint firstAttribute="bottom" secondItem="Hoe-fP-ujm" secondAttribute="bottom" constant="5" id="aHt-Ah-BvK"/>
-                                    <constraint firstAttribute="trailing" secondItem="p0X-Lb-ALe" secondAttribute="trailing" constant="5" id="aip-eg-Xug"/>
-                                    <constraint firstItem="p0X-Lb-ALe" firstAttribute="leading" secondItem="5RL-Z2-LzW" secondAttribute="leading" constant="5" id="bc0-WT-BVg"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hoe-fP-ujm" secondAttribute="trailing" constant="5" id="ha3-O7-0gf"/>
-                                    <constraint firstAttribute="bottom" secondItem="p0X-Lb-ALe" secondAttribute="bottom" constant="5" id="rs9-9A-V57"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="p0X-Lb-ALe" secondAttribute="trailing" id="380-zP-1Nn"/>
+                                    <constraint firstItem="Hoe-fP-ujm" firstAttribute="top" secondItem="5RL-Z2-LzW" secondAttribute="topMargin" id="AwC-nH-5nb"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Hoe-fP-ujm" secondAttribute="bottom" id="FNh-E0-1LF"/>
+                                    <constraint firstItem="Hoe-fP-ujm" firstAttribute="leading" secondItem="5RL-Z2-LzW" secondAttribute="leadingMargin" id="K3I-2o-EfD"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Hoe-fP-ujm" secondAttribute="trailing" id="Kfv-MO-kKZ"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Hoe-fP-ujm" secondAttribute="bottom" id="LXy-Rc-zmr"/>
+                                    <constraint firstItem="p0X-Lb-ALe" firstAttribute="leading" secondItem="5RL-Z2-LzW" secondAttribute="leadingMargin" id="PIA-on-Md4"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="p0X-Lb-ALe" secondAttribute="bottom" id="SGp-xb-M12"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Hoe-fP-ujm" secondAttribute="trailing" id="Uhs-R4-UxW"/>
+                                    <constraint firstItem="Hoe-fP-ujm" firstAttribute="top" secondItem="5RL-Z2-LzW" secondAttribute="topMargin" id="sAn-Y1-Kr3"/>
+                                    <constraint firstItem="p0X-Lb-ALe" firstAttribute="top" secondItem="5RL-Z2-LzW" secondAttribute="topMargin" id="wjr-k5-90r"/>
+                                    <constraint firstItem="Hoe-fP-ujm" firstAttribute="leading" secondItem="5RL-Z2-LzW" secondAttribute="leadingMargin" id="zTy-Bf-bz7"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="Hoe-fP-ujm" id="gQF-dP-OHk"/>
