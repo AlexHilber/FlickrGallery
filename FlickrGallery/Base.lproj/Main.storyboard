@@ -68,7 +68,7 @@
         <!--Flickr Photo View Controller-->
         <scene sceneID="KX0-Az-SVm">
             <objects>
-                <viewController storyboardIdentifier="FlickrPhotoViewController" id="4fl-KH-B3j" customClass="FlickrPhotoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FlickrPhotoViewController" automaticallyAdjustsScrollViewInsets="NO" id="4fl-KH-B3j" customClass="FlickrPhotoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w7Y-zz-JJS"/>
                         <viewControllerLayoutGuide type="bottom" id="b1N-fq-3O3"/>
@@ -77,9 +77,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCN-fI-QtP">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="6" translatesAutoresizingMaskIntoConstraints="NO" id="oyO-OO-dic">
                                 <rect key="frame" x="0.0" y="44" width="600" height="556"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCN-fI-QtP">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fCN-fI-QtP" firstAttribute="leading" secondItem="oyO-OO-dic" secondAttribute="leading" id="2zx-Oa-cUk"/>
+                                    <constraint firstItem="fCN-fI-QtP" firstAttribute="centerX" secondItem="oyO-OO-dic" secondAttribute="centerX" id="82L-X8-bNI"/>
+                                    <constraint firstItem="fCN-fI-QtP" firstAttribute="centerY" secondItem="oyO-OO-dic" secondAttribute="centerY" id="D4C-rG-qC5"/>
+                                    <constraint firstItem="fCN-fI-QtP" firstAttribute="bottom" secondItem="oyO-OO-dic" secondAttribute="bottom" id="Nmf-5b-dHq"/>
+                                    <constraint firstItem="fCN-fI-QtP" firstAttribute="trailing" secondItem="oyO-OO-dic" secondAttribute="trailing" id="P7C-uv-gzS"/>
+                                    <constraint firstItem="fCN-fI-QtP" firstAttribute="top" secondItem="oyO-OO-dic" secondAttribute="top" id="peM-aX-iLw"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="4fl-KH-B3j" id="qaI-Bu-lYt"/>
+                                </connections>
+                            </scrollView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSz-Kn-bbo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <constraints>
@@ -94,15 +110,17 @@
                         <constraints>
                             <constraint firstItem="BSz-Kn-bbo" firstAttribute="top" secondItem="gqI-Iu-ZdW" secondAttribute="top" id="45A-4O-iMo"/>
                             <constraint firstItem="BSz-Kn-bbo" firstAttribute="leading" secondItem="gqI-Iu-ZdW" secondAttribute="leading" id="A0T-H8-Lhy"/>
+                            <constraint firstItem="oyO-OO-dic" firstAttribute="top" secondItem="BSz-Kn-bbo" secondAttribute="bottom" id="D6F-NI-XTi"/>
+                            <constraint firstItem="oyO-OO-dic" firstAttribute="bottom" secondItem="b1N-fq-3O3" secondAttribute="top" id="DBn-3g-4qG"/>
                             <constraint firstAttribute="trailing" secondItem="BSz-Kn-bbo" secondAttribute="trailing" id="X7e-db-zWG"/>
-                            <constraint firstItem="fCN-fI-QtP" firstAttribute="leading" secondItem="gqI-Iu-ZdW" secondAttribute="leading" id="q0U-zg-MA7"/>
-                            <constraint firstItem="b1N-fq-3O3" firstAttribute="top" secondItem="fCN-fI-QtP" secondAttribute="bottom" id="vt4-WN-5Uv"/>
-                            <constraint firstAttribute="trailing" secondItem="fCN-fI-QtP" secondAttribute="trailing" id="xTV-XB-hFf"/>
-                            <constraint firstItem="fCN-fI-QtP" firstAttribute="top" secondItem="BSz-Kn-bbo" secondAttribute="bottom" id="xur-Ay-K5p"/>
+                            <constraint firstItem="oyO-OO-dic" firstAttribute="trailing" secondItem="gqI-Iu-ZdW" secondAttribute="trailing" id="ZFd-cz-iqX"/>
+                            <constraint firstItem="oyO-OO-dic" firstAttribute="leading" secondItem="gqI-Iu-ZdW" secondAttribute="leading" id="a5g-Iq-MKV"/>
+                            <constraint firstItem="oyO-OO-dic" firstAttribute="centerX" secondItem="gqI-Iu-ZdW" secondAttribute="centerX" id="yEo-x9-BkX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="fCN-fI-QtP" id="A2N-qk-QJ0"/>
+                        <outlet property="scrollView" destination="oyO-OO-dic" id="KzM-vu-dlh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6O-Wb-iBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,7 +149,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hoe-fP-ujm">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hoe-fP-ujm">
                                             <rect key="frame" x="8" y="8" width="84" height="84"/>
                                         </imageView>
                                         <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0X-Lb-ALe">
