@@ -134,10 +134,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hoe-fP-ujm">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="5" y="5" width="90" height="90"/>
                                         </imageView>
                                         <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0X-Lb-ALe">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="5" y="5" width="90" height="90"/>
                                             <state key="normal">
                                                 <color key="titleColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
@@ -150,14 +150,14 @@
                                 </view>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="p0X-Lb-ALe" firstAttribute="top" secondItem="5RL-Z2-LzW" secondAttribute="top" id="70Q-6n-zVH"/>
-                                    <constraint firstAttribute="trailing" secondItem="p0X-Lb-ALe" secondAttribute="trailing" id="7eK-k1-YFx"/>
-                                    <constraint firstItem="Hoe-fP-ujm" firstAttribute="leading" secondItem="5RL-Z2-LzW" secondAttribute="leading" id="Acc-he-Rea"/>
-                                    <constraint firstItem="p0X-Lb-ALe" firstAttribute="leading" secondItem="5RL-Z2-LzW" secondAttribute="leading" id="Eqz-so-SNo"/>
-                                    <constraint firstItem="Hoe-fP-ujm" firstAttribute="top" secondItem="5RL-Z2-LzW" secondAttribute="top" id="UNb-zi-CUt"/>
-                                    <constraint firstAttribute="bottom" secondItem="p0X-Lb-ALe" secondAttribute="bottom" id="chj-1w-4A6"/>
-                                    <constraint firstAttribute="bottom" secondItem="Hoe-fP-ujm" secondAttribute="bottom" id="ejD-yi-jeG"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hoe-fP-ujm" secondAttribute="trailing" id="zGt-Ek-5Zq"/>
+                                    <constraint firstItem="p0X-Lb-ALe" firstAttribute="top" secondItem="5RL-Z2-LzW" secondAttribute="top" constant="5" id="3Rb-e8-GJC"/>
+                                    <constraint firstItem="Hoe-fP-ujm" firstAttribute="top" secondItem="5RL-Z2-LzW" secondAttribute="top" constant="5" id="MRx-vm-ppo"/>
+                                    <constraint firstItem="Hoe-fP-ujm" firstAttribute="leading" secondItem="5RL-Z2-LzW" secondAttribute="leading" constant="5" id="NeN-2F-JZb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hoe-fP-ujm" secondAttribute="bottom" constant="5" id="aHt-Ah-BvK"/>
+                                    <constraint firstAttribute="trailing" secondItem="p0X-Lb-ALe" secondAttribute="trailing" constant="5" id="aip-eg-Xug"/>
+                                    <constraint firstItem="p0X-Lb-ALe" firstAttribute="leading" secondItem="5RL-Z2-LzW" secondAttribute="leading" constant="5" id="bc0-WT-BVg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hoe-fP-ujm" secondAttribute="trailing" constant="5" id="ha3-O7-0gf"/>
+                                    <constraint firstAttribute="bottom" secondItem="p0X-Lb-ALe" secondAttribute="bottom" constant="5" id="rs9-9A-V57"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="Hoe-fP-ujm" id="gQF-dP-OHk"/>
