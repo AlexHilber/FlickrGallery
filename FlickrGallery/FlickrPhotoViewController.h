@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FlickrPhotoViewController : UIViewController
+@interface FlickrPhotoViewController : UIViewController <UIScrollViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIScrollView* scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView* imageView;
 
 - (void)setImagePath:(NSURL*)imagePathInput;

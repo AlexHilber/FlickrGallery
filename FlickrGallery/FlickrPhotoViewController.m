@@ -25,6 +25,9 @@
         NSData *imageData = [NSData dataWithContentsOfURL:self.imagePath];
         self.imageView.image = [UIImage imageWithData:imageData];
         
+        //Adjust scroll view with new image
+        self.scrollView.contentSize = self.imageView.frame.size;
+        
         //Set in user defaults that this image has been seen
         NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
         [defaults setBool:YES forKey:self.imagePath.path];
@@ -34,6 +37,12 @@
 
 - (void)setImagePath:(NSURL *)imagePathInput {
     _imagePath = imagePathInput;
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (UIView*)viewForZoomingInScrollView:(UIScrollView*)scrollView {
+    return self.imageView;
 }
 
 @end
