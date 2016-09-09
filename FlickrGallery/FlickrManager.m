@@ -44,6 +44,7 @@ static int const numResults = 30;
     
     //With pages not specified, results default to 1 page
     NSString* urlString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&lat=%g&lon=%g&accuracy=%d&api_key=%@&per_page=%d&format=json&nojsoncallback=1", location.x, location.y, geoSearchAccuracy, apiKey, numResults];
+    NSLog(@"URL string: %@", urlString);
     NSURL* url = [NSURL URLWithString:urlString];
 
     NSData* jsonData = [NSData dataWithContentsOfURL:url];
