@@ -28,9 +28,9 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Required to find photos from your location</string>
+	<string>Required to find photos from your current location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Required to find photos from your location</string>
+	<string>Required to find photos from your current location</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

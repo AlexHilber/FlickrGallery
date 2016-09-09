@@ -18,4 +18,3 @@
 - (void)cellTapped:(NSURL*)imagePath;
 
 @end
-
