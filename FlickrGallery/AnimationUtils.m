@@ -2,7 +2,7 @@
 //  AnimationUtils.m
 //  FlickrGallery
 //
-//  Created by Stephen on 9/8/16.
+//  Created by Alexandra on 9/8/16.
 //  Copyright © 2016 Alexandra. All rights reserved.
 //
 
